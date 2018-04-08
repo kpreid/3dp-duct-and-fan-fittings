@@ -1,12 +1,12 @@
 include <constants.scad>;
 
 // must be at least 7.5 mm to allow for the difference between hole pattern and frame size, but we also want to fit over a bad hole
-roundover_and_margin = 7.5 + 8;
+roundover_and_margin = 7.5 + 4;
 plate_thick = 2;
 
 screen_frame_thick = 1;
 screen_slat_thick = 1;
-screen_across = fan_frame_width;
+screen_across = fan_frame_width + 5;
 screen_depth = 15;
 screen_slat_spacing = 14;
 screen_slat_phase = 0;
@@ -54,9 +54,9 @@ module screen() {
         }
         
         // cut slats off at base for support
-        halfneg = -(fan_frame_width + epsilon) / 2;
+        halfneg = -(screen_across + epsilon) / 2;
         translate([halfneg, halfneg, -screen_depth])
-        cube([fan_frame_width + epsilon, fan_frame_width + epsilon, screen_depth]);
+        cube([screen_across + epsilon, screen_across + epsilon, screen_depth]);
     }
 }
 
