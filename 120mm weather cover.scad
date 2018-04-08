@@ -7,7 +7,9 @@ plate_thick = 2;
 screen_frame_thick = 1;
 screen_slat_thick = 1;
 screen_across = fan_frame_width;
-screen_depth = 10;
+screen_depth = 15;
+screen_slat_spacing = 14;
+screen_slat_phase = 0;
 
 epsilon = 0.1;
 
@@ -31,21 +33,24 @@ screen();
 module screen() {
     translate([0, 0, screen_depth / 2])
     difference() {
-      big_across = screen_across + screen_frame_thick * 2;
-      cube([big_across, screen_across - epsilon, screen_depth], center=true);
-      cube([screen_across, screen_across, screen_depth + epsilon], center=true);
+      cylinder(
+        d1=screen_across + screen_frame_thick * 4,
+        d2=screen_across + screen_frame_thick * 2,
+        h=screen_depth,
+        center=true);
+      cylinder(d=screen_across, h=screen_depth + epsilon, center=true);
     }
 
     difference() {
         intersection() {
-            for (i = [-10:10]) {
+            for (i = [-5:4]) {
                 diag = isosceles_hypotenuse(screen_depth * 2) - isosceles_hypotenuse(screen_slat_thick);
 
-                translate([0, 10 * i, 0])
+                translate([0, screen_slat_phase + screen_slat_spacing * i, 0])
                 rotate([45, 0, 0])
                 cube([screen_across, diag, screen_slat_thick], center=true);
             }
-            cube([screen_across + epsilon, screen_across + epsilon, 1000], center=true);
+            cylinder(d=screen_across + epsilon, h=1000, center=true);
         }
         
         // cut slats off at base for support
