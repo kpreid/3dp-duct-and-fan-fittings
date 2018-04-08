@@ -1,8 +1,8 @@
 include <constants.scad>;
 
-// must be at least 7.5 mm to allow for the difference between hole pattern and frame size, but we also want to fit over a bad hole
+// must be at least 7.5 mm to allow for the difference between hole pattern and frame size, but we also want to fit over a bad/misaligned hole
 roundover_and_margin = 7.5 + 4;
-plate_thick = 2;
+plate_thick = 1.5;
 
 screen_frame_thick = 1;
 screen_slat_thick = 1;
@@ -21,7 +21,7 @@ difference() {
         cube([fan_mounting_hole_spacing, fan_mounting_hole_spacing, plate_thick / 2], center=true);
     }
     
-    cylinder(r=fan_frame_width / 2, h=plate_thick * 2, center=true);
+    cylinder(r=screen_across / 2, h=plate_thick * 2, center=true);
     
     frame_hole_negative();
 }
