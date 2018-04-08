@@ -2,14 +2,16 @@ fan_mounting_hole_spacing = 105;
 fan_mounting_hole_diameter = 4.3;  // slightly oversized for #8, will probably need drilling anyway
 fan_frame_width = 120;
 
-module mounting_plate(roundover_and_margin, plate_thick) {
+module mounting_plate(roundover_and_margin, plate_thick, hole_dia) {
   difference() {
         minkowski() {
             // each of these has half height so the sum is full height
             cylinder(r=roundover_and_margin, h=plate_thick / 2, center=true);
             cube([fan_mounting_hole_spacing, fan_mounting_hole_spacing, plate_thick / 2], center=true);
         }
-    
+        
+        cylinder(d=hole_dia, h=plate_thick * 2, center=true);
+        
         frame_hole_negative();
     }
 }

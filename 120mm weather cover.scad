@@ -14,11 +14,7 @@ screen_slat_phase = 0;
 epsilon = 0.1;
 
 translate([0, 0, plate_thick / 2])
-difference() {
-    mounting_plate(roundover_and_margin=roundover_and_margin, plate_thick=plate_thick);
-    
-    cylinder(r=screen_across / 2, h=plate_thick * 2, center=true);
-}
+mounting_plate(roundover_and_margin=roundover_and_margin, plate_thick=plate_thick, hole_dia=screen_across);
 
 // frame of louver
 translate(plate_thick - epsilon)
