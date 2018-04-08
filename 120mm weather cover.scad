@@ -15,15 +15,9 @@ epsilon = 0.1;
 
 translate([0, 0, plate_thick / 2])
 difference() {
-    minkowski() {
-        // each of these has half height so the sum is full height
-        cylinder(r=roundover_and_margin, h=plate_thick / 2, center=true);
-        cube([fan_mounting_hole_spacing, fan_mounting_hole_spacing, plate_thick / 2], center=true);
-    }
+    mounting_plate(roundover_and_margin=roundover_and_margin, plate_thick=plate_thick);
     
     cylinder(r=screen_across / 2, h=plate_thick * 2, center=true);
-    
-    frame_hole_negative();
 }
 
 // frame of louver
