@@ -1,7 +1,7 @@
 include <constants.scad>;
 
 plate_thick = 2.5;
-tube_thick = 2;
+tube_thick = 2.5;
 fan_hole = fan_frame_width - 4;
 duct_width_base = 25.4 /* conversion */ * 4 /* inches */;
 duct_width_taper = duct_width_base - 2;
