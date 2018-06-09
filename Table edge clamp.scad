@@ -91,7 +91,10 @@ module main() {
             
             nut_access_thick = 6;
             translate([fan_mounting_hole_spacing / 2, fan_mounting_hole_spacing / 2, plate_thick + nut_access_thick / 2])
-            cylinder(d=25, h=nut_access_thick, center=true);
+            union() {
+                cube([30, 12, nut_access_thick], center=true);
+                cube([12, 30, nut_access_thick], center=true);
+            }
         }
     }
 }
