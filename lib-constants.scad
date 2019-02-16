@@ -3,6 +3,7 @@ fan_mounting_hole_diameter = 4.3;  // slightly oversized for #8, will probably n
 fan_frame_width = 120;
 
 minimum_roundover = (fan_frame_width - fan_mounting_hole_spacing) / 2;
+cylinder_fn = 80;
 
 module mounting_plate(roundover_and_margin, plate_thick, hole_dia) {
   difference() {
@@ -12,7 +13,7 @@ module mounting_plate(roundover_and_margin, plate_thick, hole_dia) {
             cube([fan_mounting_hole_spacing, fan_mounting_hole_spacing, plate_thick / 2], center=true);
         }
         
-        cylinder(d=hole_dia, h=plate_thick * 2, center=true);
+        cylinder(d=hole_dia, h=plate_thick * 2, center=true, $fn=cylinder_fn);
         
         frame_hole_negative();
     }
