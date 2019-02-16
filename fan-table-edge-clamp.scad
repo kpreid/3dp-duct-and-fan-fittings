@@ -1,4 +1,4 @@
-include <constants.scad>
+include <lib-constants.scad>
 
 // measured about table
 table_thick = 7;
@@ -12,7 +12,7 @@ adaptation_length = 20;
 
 // calculated
 overall_length = fan_mounting_hole_spacing + adaptation_length + table_underside_before_pipe;
-fan_hole = fan_frame_width - 4;  // TODO duplicate with fan_to_duct.scad
+fan_hole = fan_frame_width - 4;  // TODO duplicate with lib-fan-to-duct.scad
 
 
 epsilon = 0.01;

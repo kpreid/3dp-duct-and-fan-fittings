@@ -1,4 +1,4 @@
-include <constants.scad>;
+include <lib-constants.scad>;
 
 // must be at least 7.5 mm to allow for the difference between hole pattern and frame size, but we also want to fit over a bad/misaligned hole
 roundover_and_margin = 7.5 + 4;
