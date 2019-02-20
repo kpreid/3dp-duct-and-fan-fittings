@@ -1,4 +1,4 @@
-include <constants.scad>;
+include <lib-constants.scad>;
 
 module fan_to_duct(is_male_end) {
     plate_thick = 2.5;
