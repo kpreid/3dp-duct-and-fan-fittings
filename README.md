@@ -1,4 +1,4 @@
-Adapters to combine 4" ducts (as commonly used for venting clothes dryers) and 120 mm "computer case" fans in various ways.
+This is a collection of adapters to combine 4" ducts (as commonly used for venting clothes dryers) and 120 mm "computer case" fans in various ways. Make your own small-scale ventilation systems with commodity parts.
 
 ## Components
 
