@@ -10,7 +10,7 @@ Note that 4" ducts are widely varying in fit and you may need to adjust the size
 
 * `fan-louver.scad` provides moderate weather/finger protection for a 120 mm fan mounted to the other side of a panel. (It would be oversized if used for a duct, but a redesign would be feasible.)
 
-* `stator.scad` is a simple stator (in the fluid dynamic sense, not the electric motor sense) for 120 mm fans. When using two fans in series, placing the stator between them will provide a moderate improvement in performance.
+* `stator.scad` is a simple stator (in the fluid dynamic sense, not the electric motor sense) for 120 mm fans. When using two fans in series, placing the stator between them will provide a moderate improvement in performance. **Print two copies and glue them together,** using the 1/4" center hole for alignment while gluing.
 
 * `fan-table-edge-clamp.scad` adds a flat plate sticking out of the side of an assembly of the other 120 mm components, which may be used with a clamp to secure the assembly to the edge of a flat surface perpendicular to the direction of the duct. This design needs work — it lacks some tolerances and room for nut/bolt insertion.
 
