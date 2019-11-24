@@ -5,8 +5,9 @@ duct_end_vent();
 
 
 module duct_end_vent() {
-    wall_thickness = 2.5;
+    wall_thickness = 1.25;
     box_end_z = 10;
+    box_width = duct_diameter_nominal;
     taper_end_z = 40;
     epsilon = 0.01;
 
@@ -17,8 +18,8 @@ module duct_end_vent() {
 
     module interior_form(extra=false) {
         hull() {
-            translate([-0.5, -0.5, 0] * duct_diameter_nominal)
-            cube([duct_diameter_nominal, duct_diameter_nominal, box_end_z / 2 + epsilon]);
+            translate([-0.5, -0.5, 0] * box_width)
+            cube([box_width, box_width, box_end_z / 2 + epsilon]);
             
             translate([0, 0, taper_end_z])
             cylinder(d=duct_od_base - wall_thickness, h=epsilon);
@@ -44,9 +45,22 @@ module duct_end_vent() {
             cylinder(d=duct_diameter_nominal * 2, h=wall_thickness * 2);
             
             // cut bottom open flat
+            if (false)
             translate([0, 0, epsilon]) 
             mirror([0, 0, 1])
             cylinder(d=duct_diameter_nominal * 2, h=wall_thickness * 2);
+            
+            // cut bottom open in a grid
+            n = 10;
+            rib_width = 1.2;
+            step = (box_width - rib_width) / n;
+            for (ix = [0:n - 1])
+            for (iy = [0:n - 1])
+            translate([
+                -box_width / 2 + rib_width + ix * step,
+                -box_width / 2 + rib_width + iy * step, 
+                -wall_thickness - epsilon])
+            cube([step - rib_width, step - rib_width, wall_thickness + epsilon * 2]);
         }
     }
 
