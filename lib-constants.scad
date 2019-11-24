@@ -2,6 +2,10 @@ fan_mounting_hole_spacing = 105;
 fan_mounting_hole_diameter = 4.3;  // slightly oversized for #8, will probably need drilling anyway
 fan_frame_width = 120;
 
+duct_diameter_nominal = 25.4 /* conversion */ * 4 /* inches */;
+duct_taper_extreme = 1.5;
+duct_fitting_length = 30;
+
 minimum_roundover = (fan_frame_width - fan_mounting_hole_spacing) / 2;
 cylinder_fn = 80;
 

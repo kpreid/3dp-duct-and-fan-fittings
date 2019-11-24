@@ -4,10 +4,7 @@ module fan_to_duct(is_male_end) {
     plate_thick = 2.5;
     tube_thick = 2.5;
     fan_hole = fan_frame_width - 4;
-    duct_diameter_nominal = 25.4 /* conversion */ * 4 /* inches */;
-    duct_taper_extreme = 1.5;
     transition = 10;
-    duct_end = 30;
     epsilon = 0.01;
 
     duct_od_base = duct_diameter_nominal + (is_male_end ? duct_taper_extreme : tube_thick);
@@ -31,12 +28,12 @@ module fan_to_duct(is_male_end) {
             cylinder(
                 d1=duct_od_base,
                 d2=duct_od_tip,
-            h=duct_end);
+            h=duct_fitting_length);
             translate([0, 0, -epsilon])
             cylinder(
                 d1=duct_od_base - tube_thick,
                 d2=duct_od_tip - tube_thick,
-                h=duct_end + epsilon * 2);
+                h=duct_fitting_length + epsilon * 2);
         }
     }
 
