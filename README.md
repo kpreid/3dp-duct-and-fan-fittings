@@ -2,11 +2,17 @@ This is a collection of adapters to combine 4" ducts (as commonly used for venti
 
 ## Components
 
+### Duct components and adapters
+
 * `fan-to-duct-inner.scad` bolts to a fan and fits into the end of 4" duct. While the taper will often let it fit fairly snugly, additional materials may be desired to secure the duct — tape, glue, screws. If using screws, be sure to pre-drill the hole to avoid cracking apart the plastic layers.
 
 * `fan-to-duct-outer.scad` bolts to a fan and is the size of 4" duct, so it accepts tubes designed to insert into 4" duct.
 
+* `duct-end-vent.scad` is a rigid end-piece without any mountings that fits into the end of 4" duct, with a square rather than round outside shape. Its design purpose was to protect a free end of flex duct and slightly discourage it from rolling;
+
 Note that 4" ducts are widely varying in fit and you may need to adjust the sizes or add tape or other filler to make a snug connection.
+
+### Fan components
 
 * `fan-louver.scad` provides moderate weather/finger protection for a 120 mm fan mounted to the other side of a panel. (It would be oversized if used for a duct, but a redesign would be feasible.)
 
